@@ -83,7 +83,7 @@ class CC_DLL CCSprite : public CCNode, public CCTextureProtocol, public CCRGBAPr
     CC_PROPERTY_PASS_BY_REF(ccColor3B, m_sColor, Color);
 public:
     virtual void draw(void);
-
+    virtual void updateTweenAction(float,char const*);
 public:
     // attributes
 
@@ -120,9 +120,9 @@ public:
     inline const CCPoint& getOffsetPosition(void) { return m_obOffsetPosition; }
 
     /** conforms to CCTextureProtocol protocol */
-    inline ccBlendFunc getBlendFunc(void) { return m_sBlendFunc; }
+    inline virtual const ccBlendFunc getBlendFunc(void) { return m_sBlendFunc; }
     /** conforms to CCTextureProtocol protocol */
-    inline void setBlendFunc(ccBlendFunc blendFunc) { m_sBlendFunc = blendFunc; }
+    inline virtual void setBlendFunc(ccBlendFunc blendFunc) { m_sBlendFunc = blendFunc; }
 
 public:
     /** Creates an sprite with a texture.

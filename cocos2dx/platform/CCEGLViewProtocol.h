@@ -33,6 +33,13 @@ public:
     virtual void    setDesignResolutionSize(float width, float height);
     virtual void    setTouchDelegate(EGLTouchDelegate * pDelegate);
     virtual float   getScreenScaleFactor();
+    virtual float   getScreenScaleFactorMax();
+    virtual float   getScreenScaleFactorH();
+    virtual float   getScreenScaleFactorW();
+    virtual float   getScreenTop();
+    virtual float   getScreenBottom();
+    virtual float   getScreenLeft();
+    virtual float   getScreenRight();
     virtual bool    canSetContentScaleFactor();
     virtual void    setContentScaleFactor(float contentScaleFactor);
     virtual void    setViewPortInPoints(float x , float y , float w , float h);

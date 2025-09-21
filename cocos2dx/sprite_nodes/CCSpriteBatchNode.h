@@ -137,7 +137,7 @@ public:
     virtual CCTexture2D* getTexture(void);
     virtual void setTexture(CCTexture2D *texture);
     virtual void setBlendFunc(ccBlendFunc blendFunc);
-    virtual ccBlendFunc getBlendFunc(void);
+    virtual const ccBlendFunc getBlendFunc(void);
 
     virtual void visit(void);
     virtual void addChild(CCNode * child);

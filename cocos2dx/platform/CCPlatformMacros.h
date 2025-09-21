@@ -208,4 +208,9 @@ public: virtual void set##funName(varType var)   \
     #define CC_DEPRECATED_ATTRIBUTE
 #endif 
 
+#define CC_PROPERTY_RET_CONST(varType, varName, funName)\
+protected: varType varName;\
+public: virtual const varType get##funName(void);\
+public: virtual void set##funName(varType var);
+
 #endif // __CC_PLATFORM_MACROS_H__

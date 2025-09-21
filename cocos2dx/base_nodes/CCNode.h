@@ -564,52 +564,56 @@ public:
      The matrix is in Pixels.
      @since v0.7.1
      */
-    virtual CCAffineTransform nodeToParentTransform(void);
+    virtual const CCAffineTransform nodeToParentTransform(void);
 
     /** Returns the matrix that transform parent's space coordinates to the node's (local) space coordinates.
      The matrix is in Pixels.
      @since v0.7.1
      */
-    virtual CCAffineTransform parentToNodeTransform(void);
+    virtual const CCAffineTransform parentToNodeTransform(void);
 
     /** Retrusn the world affine transform matrix. The matrix is in Pixels.
      @since v0.7.1
      */
-    virtual CCAffineTransform nodeToWorldTransform(void);
+    virtual const CCAffineTransform nodeToWorldTransform(void);
 
     /** Returns the inverse world affine transform matrix. The matrix is in Pixels.
      @since v0.7.1
      */
-    virtual CCAffineTransform worldToNodeTransform(void);
+    virtual const CCAffineTransform worldToNodeTransform(void);
 
     /** Converts a Point to node (local) space coordinates. The result is in Points.
      @since v0.7.1
      */
-    CCPoint convertToNodeSpace(const CCPoint& worldPoint);
+    const CCPoint convertToNodeSpace(const CCPoint& worldPoint);
     /** Converts a Point to world space coordinates. The result is in Points.
      @since v0.7.1
      */
-    CCPoint convertToWorldSpace(const CCPoint& nodePoint);
+    const CCPoint convertToWorldSpace(const CCPoint& nodePoint);
     /** Converts a Point to node (local) space coordinates. The result is in Points.
      treating the returned/received node point as anchor relative.
      @since v0.7.1
      */
-    CCPoint convertToNodeSpaceAR(const CCPoint& worldPoint);
+    const CCPoint convertToNodeSpaceAR(const CCPoint& worldPoint);
     /** Converts a local Point to world space coordinates.The result is in Points.
      treating the returned/received node point as anchor relative.
      @since v0.7.1
      */
-    CCPoint convertToWorldSpaceAR(const CCPoint& nodePoint);
+    const CCPoint convertToWorldSpaceAR(const CCPoint& nodePoint);
 
     /** convenience methods which take a CCTouch instead of CCPoint
      @since v0.7.1
      */
-    CCPoint convertTouchToNodeSpace(CCTouch * touch);
+    const CCPoint convertTouchToNodeSpace(CCTouch * touch);
 
     /** converts a CCTouch (world coordinates) into a local coordiante. This method is AR (Anchor Relative).
      @since v0.7.1
      */
-    CCPoint convertTouchToNodeSpaceAR(CCTouch * touch);
+    const CCPoint convertTouchToNodeSpaceAR(CCTouch * touch);
+
+    void removeMeAndCleanup();
+
+    virtual void updateTweenAction(float,char const*);
 };
 
 // end of base_node group

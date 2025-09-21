@@ -79,7 +79,7 @@ public:
     virtual CCTexture2D* getTexture(void);
     virtual void setTexture(CCTexture2D *texture);
     virtual void setBlendFunc(ccBlendFunc blendFunc);
-    virtual ccBlendFunc getBlendFunc(void);
+    virtual const ccBlendFunc getBlendFunc(void);
     virtual void setColor(const ccColor3B& color);
     virtual const ccColor3B& getColor(void);
     virtual GLubyte getOpacity(void);

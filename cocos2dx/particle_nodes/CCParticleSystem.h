@@ -332,7 +332,7 @@ public:
     /** conforms to CocosNodeTexture protocol */
     CC_PROPERTY(CCTexture2D*, m_pTexture, Texture)
     /** conforms to CocosNodeTexture protocol */
-    CC_PROPERTY(ccBlendFunc, m_tBlendFunc, BlendFunc)
+    CC_PROPERTY_RET_CONST(ccBlendFunc, m_tBlendFunc, BlendFunc)
     /** does the alpha value modify color */
     CC_PROPERTY(bool, m_bOpacityModifyRGB, OpacityModifyRGB)
 
@@ -408,6 +408,8 @@ public:
     void resetSystem();
     //! whether or not the system is full
     bool isFull();
+
+    void resumeSystem();
 
     //! should be overriden by subclasses
     virtual void updateQuadWithParticle(tCCParticle* particle, const CCPoint& newPosition);

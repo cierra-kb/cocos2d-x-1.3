@@ -38,6 +38,14 @@ class CCZone;
 class CCObject;
 class CCNode;
 class CCEvent;
+class DS_Dictionary;
+
+enum CCObjectType {
+    kCCObjectTypeNone = 0,
+    kCCObjectTypePlayLayer = 5,
+    kCCObjectTypeLevelEditorLayer = 6,
+    kCCObjectTypeMenuLayer = 15,
+};
 
 class CC_DLL CCCopying
 {
@@ -56,7 +64,8 @@ protected:
     // count of refrence
     unsigned int        m_uReference;
     // is the object autoreleased
-    bool        m_bManaged;        
+    bool        m_bManaged;
+    CCObjectType m_eObjectType;       
 public:
     CCObject(void);
     virtual ~CCObject(void);
@@ -70,7 +79,14 @@ public:
     virtual bool isEqual(const CCObject* pObject);
 
     virtual void update(float dt) {CC_UNUSED_PARAM(dt);};
-    
+
+    virtual CCObjectType getObjType() const { return m_eObjectType; }
+    virtual void setObjType(const CCObjectType& var) { m_eObjectType = var; }
+
+    CCObject* createWithCoder(DS_Dictionary*);
+    virtual void encodeWithEncoder(DS_Dictionary*) {}
+    virtual bool canEncode();
+
     friend class CCAutoreleasePool;
 };
 

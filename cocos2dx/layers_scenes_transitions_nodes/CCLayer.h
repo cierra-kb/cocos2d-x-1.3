@@ -261,7 +261,7 @@ public:
     /** Color: conforms to CCRGBAProtocol protocol */
     CC_PROPERTY_PASS_BY_REF(ccColor3B, m_tColor, Color)
     /** BlendFunction. Conforms to CCBlendProtocol protocol */
-    CC_PROPERTY(ccBlendFunc, m_tBlendFunc, BlendFunc)
+    CC_PROPERTY_RET_CONST(ccBlendFunc, m_tBlendFunc, BlendFunc)
 
     virtual void setOpacityModifyRGB(bool bValue) {CC_UNUSED_PARAM(bValue);}
     virtual bool isOpacityModifyRGB(void) { return false;}

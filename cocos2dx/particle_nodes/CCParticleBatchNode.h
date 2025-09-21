@@ -114,7 +114,7 @@ public:
     virtual void setTexture(CCTexture2D *texture);
     virtual void setBlendFunc(ccBlendFunc blendFunc);
     // returns the blending function used for the texture
-    virtual ccBlendFunc getBlendFunc(void);
+    virtual const ccBlendFunc getBlendFunc(void);
 
     void visit();
 

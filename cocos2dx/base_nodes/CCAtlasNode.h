@@ -72,7 +72,7 @@ protected:
     bool isOpacityModifyRGB();
     void setOpacityModifyRGB(bool isOpacityModifyRGB);
     
-    CC_PROPERTY(ccBlendFunc, m_tBlendFunc, BlendFunc);
+    CC_PROPERTY_RET_CONST(ccBlendFunc, m_tBlendFunc, BlendFunc);
     CC_PROPERTY(GLubyte, m_cOpacity, Opacity);
     CC_PROPERTY_PASS_BY_REF(ccColor3B, m_tColor, Color);
 
