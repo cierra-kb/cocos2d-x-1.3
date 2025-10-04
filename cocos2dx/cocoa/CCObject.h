@@ -27,6 +27,8 @@ THE SOFTWARE.
 
 #include "platform/CCPlatformMacros.h"
 
+class DS_Dictionary;
+
 NS_CC_BEGIN
 
 /**
@@ -38,7 +40,6 @@ class CCZone;
 class CCObject;
 class CCNode;
 class CCEvent;
-class DS_Dictionary;
 
 enum CCObjectType {
     kCCObjectTypeNone = 0,
